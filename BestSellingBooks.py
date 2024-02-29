@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
-
+from sklearn import preprocessing.LabelEncoder()
 st.write("""
 # Best Selling Books App
 
@@ -11,7 +11,7 @@ This app predicts the **Best Selling Books** type!
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    Authors = st.sidebar.selectbox('Authors', ['Agatha Christie', 'Albert Camus', 'Alex Comfort',
+    Authors = st.sidebar.selectbox('Authors',['Agatha Christie', 'Albert Camus', 'Alex Comfort',
        'Alexander Alexandrovich Fadeyev', 'Alice Sebold', 'Andrew Morton',
        'Anna Sewell', 'Anne Frank', 'Anthony Doerr',
        'Antoine de Saint-Exupéry', 'Arlene Eisenberg and Heidi Murkoff',
@@ -60,10 +60,12 @@ def user_input_features():
        'V. C. Andrews', 'Ved Prakash Sharma', 'Viktor Frankl',
        'Vladimir Nabokov', 'Wayne Dyer', 'William Bradford Huie',
        'William P. Young', 'William Peter Blatty', 'Xaviera Hollander',
-       'Xue Muqiao', 'Yann Martel', 'Yu Dan'])
+       'Xue Muqiao', 'Yann Martel', 'Yu Dan')
+    authors_encoded=label_encoder.fit_transform(Authors) 
     Original_language = st.sidebar.selectbox('Original_language', ['Chinese', 'Czech', 'Dutch', 'English', 'French', 'German',
        'Gujarati', 'Hindi', 'Italian', 'Japanese', 'Norwegian',
        'Portuguese', 'Russian', 'Spanish', 'Swedish', 'Yiddish'])
+    language_encoded=label_encoder.fit_transform(Original_language) 
     First_Published = st.sidebar.selectbox('First_Published', [1304, 1788, 1791, 1813, 1859, 1869, 1877, 1880, 1881, 1885, 1887,
        1899, 1902, 1908, 1923, 1925, 1929, 1932, 1933, 1934, 1935, 1936,
        1937, 1938, 1939, 1942, 1943, 1945, 1946, 1947, 1948, 1949, 1950,
@@ -73,6 +75,7 @@ def user_input_features():
        1987, 1988, 1989, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998,
        1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
        2010, 2011, 2012, 2014, 2015, 2016, 2018])
+    firstpublished_encoded=label_encoder.fit_transform(First_Published) 
     Genre = st.sidebar.selectbox('Genre', ['Adventure', 'Autobiographical novel', 'Autobiography',
        'Bildungsroman, Historical fiction', 'Biographical novel',
        "Children's Literature", "Children's Literature, picture book",
@@ -112,10 +115,11 @@ def user_input_features():
        'Young Adult novel, adventure, war, science fiction, action thriller',
        'Young adult fiction', 'Young adult historical novel',
        'Young adult novel', 'Young adult romantic novel'])
-    data = {'Authors': Authors,
-            'Original_language': Original_language,
-            'First_Published': First_Published,
-            'Genre': Genre}
+    genre_encoded=label_encoder.fit_transform(Genre) 
+    data = {'Authors': authors_encoded,
+            'Original_language': language_encoded,
+            'First_Published': firstpublished_encoded,
+            'Genre': genre_encoded}
     features = pd.DataFrame(data, index=[0])
     return features
 
