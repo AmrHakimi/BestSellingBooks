@@ -12,7 +12,7 @@ st.sidebar.header('User Input Parameters')
 
 def user_input_features():
     Authors = st.sidebar.selectbox('Authors', )
-    Original_language = st.sidebar.selectbox('Original_language,  3=Chinese,  4=Czech,  0=Dutch,  7=English, 11=French,
+    Original_language = st.sidebar.selectbox('Original_language',  '3=Chinese,  4=Czech,  0=Dutch,  7=English, 11=French,
                                               13=German,  5=Gujarati,  8=Hindi, 10=Italian, 12=Japanese,  2=Norwegian, 14=Portuguese, 
                                               9=Russian,  1=Spanish, 15=Swedish,  6=Yiddish')
     First_Published = st.sidebar.slider('First_Published', 0.3, 114, 20)
