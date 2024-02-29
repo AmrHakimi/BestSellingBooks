@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
-from sklearn import preprocessing.LabelEncoder()
+from sklearn import preprocessing
 st.write("""
 # Best Selling Books App
 
@@ -61,6 +61,7 @@ def user_input_features():
        'Vladimir Nabokov', 'Wayne Dyer', 'William Bradford Huie',
        'William P. Young', 'William Peter Blatty', 'Xaviera Hollander',
        'Xue Muqiao', 'Yann Martel', 'Yu Dan')
+    label_encoder=preprocessing.LabelEncoder()
     authors_encoded=label_encoder.fit_transform(Authors) 
     Original_language = st.sidebar.selectbox('Original_language', ['Chinese', 'Czech', 'Dutch', 'English', 'French', 'German',
        'Gujarati', 'Hindi', 'Italian', 'Japanese', 'Norwegian',
