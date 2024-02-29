@@ -60,7 +60,7 @@ def user_input_features():
        'V. C. Andrews', 'Ved Prakash Sharma', 'Viktor Frankl',
        'Vladimir Nabokov', 'Wayne Dyer', 'William Bradford Huie',
        'William P. Young', 'William Peter Blatty', 'Xaviera Hollander',
-       'Xue Muqiao', 'Yann Martel', 'Yu Dan')
+       'Xue Muqiao', 'Yann Martel', 'Yu Dan'])
     label_encoder=preprocessing.LabelEncoder()
     authors_encoded=label_encoder.fit_transform(Authors) 
     Original_language = st.sidebar.selectbox('Original_language', ['Chinese', 'Czech', 'Dutch', 'English', 'French', 'German',
