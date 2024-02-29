@@ -64,7 +64,7 @@ def user_input_features():
     Original_language = st.sidebar.selectbox('Original_language', ['Chinese', 'Czech', 'Dutch', 'English', 'French', 'German',
        'Gujarati', 'Hindi', 'Italian', 'Japanese', 'Norwegian',
        'Portuguese', 'Russian', 'Spanish', 'Swedish', 'Yiddish'])
-    First_Published = st.sidebar.slider('First_Published', [1304, 1788, 1791, 1813, 1859, 1869, 1877, 1880, 1881, 1885, 1887,
+    First_Published = st.sidebar.selectbox('First_Published', [1304, 1788, 1791, 1813, 1859, 1869, 1877, 1880, 1881, 1885, 1887,
        1899, 1902, 1908, 1923, 1925, 1929, 1932, 1933, 1934, 1935, 1936,
        1937, 1938, 1939, 1942, 1943, 1945, 1946, 1947, 1948, 1949, 1950,
        1951, 1952, 1953, 1955, 1956, 1957, 1958, 1960, 1961, 1962, 1963,
@@ -73,7 +73,7 @@ def user_input_features():
        1987, 1988, 1989, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998,
        1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009,
        2010, 2011, 2012, 2014, 2015, 2016, 2018])
-    Genre = st.sidebar.slider('Genre', ['Adventure', 'Autobiographical novel', 'Autobiography',
+    Genre = st.sidebar.selectbox('Genre', ['Adventure', 'Autobiographical novel', 'Autobiography',
        'Bildungsroman, Historical fiction', 'Biographical novel',
        "Children's Literature", "Children's Literature, picture book",
        "Children's fantasy novel", "Children's fiction",
@@ -114,7 +114,7 @@ def user_input_features():
        'Young adult novel', 'Young adult romantic novel'])
     data = {'Authors': Authors,
             'Original_language': Original_language,
-            'First_Published': First_Published
+            'First_Published': First_Published,
             'Genre': Genre}
     features = pd.DataFrame(data, index=[0])
     return features
