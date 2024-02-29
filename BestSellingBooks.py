@@ -11,11 +11,11 @@ This app predicts the **Best Selling Books** type!
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    Author(s) = st.sidebar.slider('Author(s)', 0.7, 297, 100)
+    Authors = st.sidebar.slider('Authors', 0.7, 297, 100)
     Original language = st.sidebar.slider('Original language', 0, 50, 15)
     First published = st.sidebar.slider('First published', 0.3, 114, 20)
     Genre = st.sidebar.slider('Genre', 0.3, 114, 20)
-    data = {'Author(s)': Author(s),
+    data = {'Authors': Authors,
             'Original language': Original language,
             'First published': First published
             'Genre': Genre}
