@@ -18,8 +18,8 @@ def user_input_features():
     First_Published = st.sidebar.slider('First_Published', 0.3, 114, 20)
     Genre = st.sidebar.slider('Genre', 0.3, 114, 20)
     data = {'Authors': Authors,
-            'Original_language': Original language,
-            'First_Published': First published
+            'Original_language': Original_language,
+            'First_Published': First_Published
             'Genre': Genre}
     features = pd.DataFrame(data, index=[0])
     return features
