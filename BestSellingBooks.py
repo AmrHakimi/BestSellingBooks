@@ -5,13 +5,14 @@ import pickle
 
 #mapping dictionary for datasets
 
-st.image('BookShelf.jpeg')
 
 st.write("""
 # Best Selling Books App
 
 This app predicts the **Best Selling Books** type!
 """)
+
+st.image('BookShelf.jpeg')
 
 st.sidebar.header('User Input Parameters')
 
