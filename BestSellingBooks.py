@@ -11,7 +11,7 @@ This app predicts the **Best Selling Books** type!
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    Authors = st.sidebar.selectbox('Author_Name',[ 22,   9,  58,   0,  17,  60,  16,  51, 146,  26, 115,  57, 126,
+    Authors = st.sidebar.selectbox('Authors Name',[ 22,   9,  58,   0,  17,  60,  16,  51, 146,  26, 115,  57, 126,
         87,  89,  47, 148,  72,  14,  90,   6, 144,  61, 121, 132,  33,
         59,  13, 122,  38,  35,  52, 145,  18,  78,  69, 108,  86,  19,
          7, 149,  24, 124,  85,  62,  15,  25,  44,  93,  28,  48, 150,
@@ -24,8 +24,8 @@ def user_input_features():
        152,  79,  11,  32,   5,  82,  77,   4,  80, 143,  36, 156,  92,
        140, 154, 123, 117,   2, 127,  97, 155, 112,  37, 118,  46, 105,
         54])
-    Original_language = st.sidebar.selectbox('Original_language', [ 3,  4,  0,  7, 11, 13,  5,  8, 10, 12,  2, 14,  9,  1, 15,  6])
-    First_Published = st.sidebar.selectbox('First_Published', [ 4, 26, 75, 24,  2, 22, 32, 10, 70, 81, 76, 77, 78, 83, 85, 67, 33,
+    Original_language = st.sidebar.selectbox('Original Language', [ 3,  4,  0,  7, 11, 13,  5,  8, 10, 12,  2, 14,  9,  1, 15,  6])
+    First_Published = st.sidebar.selectbox('First Published', [ 4, 26, 75, 24,  2, 22, 32, 10, 70, 81, 76, 77, 78, 83, 85, 67, 33,
         7, 63, 47, 36, 28, 13,  6, 60, 55, 52, 56, 34, 12, 50, 49, 11, 40,
        59, 69, 17,  5,  8, 29, 57, 80, 46, 21, 15, 23, 31, 87, 86, 41, 27,
         1, 19, 68, 20, 71, 90, 92, 88, 38, 16, 54, 39, 82, 51, 65,  9, 62,
