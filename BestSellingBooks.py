@@ -4,7 +4,7 @@ import pickle
 
 
 #mapping dictionary for datasets
-genre_mapping =
+genre_mapping
 {
     31: 'Adventure', 47: 'Autobiographical novel', 25: 'Autobiography', 41: 'Bildungsroman, Historical fiction', 24: 'Biographical novel',
     26: "Children's Literature", 0: "Children's Literature, picture book", 19: "Children's fantasy novel", 42: "Children's fiction", 
