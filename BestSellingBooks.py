@@ -2,6 +2,33 @@ import streamlit as st
 import pandas as pd
 import pickle
 
+
+#mapping dictionary for datasets
+genre_mapping =
+{
+    31: 'Adventure', 47: 'Autobiographical novel', 25: 'Autobiography', 41: 'Bildungsroman, Historical fiction', 24: 'Biographical novel',
+    26: "Children's Literature", 0: "Children's Literature, picture book", 19: "Children's fantasy novel", 42: "Children's fiction", 
+    15: "Children's literature", 54: "Children's literature, picture book, fiction", 61: "Children's novel", 38: "Children's picture book", 
+    45: 'Christian literature', 8: 'Classic regency novel, romance', 39: 'Coming-of-age', 11: 'Coming-of-age Murder mystery', 9: 'Crime novel', 
+    35: 'Crime thriller novel', 72: 'Detective', 64: 'Dystopian fiction', 5: 'Dystopian, political fiction, social science fiction', 
+    48: 'Erotica', 6: 'Essay/Literature', 23: 'Family saga', 67: 'Fantasy', 29: "Fantasy, Children's fiction", 
+    52: 'Feminist novel', 49: 'Fiction', 43: 'Gothic horror, Family saga', 66: 'Gothic novel', 34: 'Historical fiction', 33: 'Historical fiction, war novel',
+    56: 'Historical non-fiction, Autobiography, Memoir, Bildungsroman / Coming of Age, Jewish literature', 13: 'Historical novel',
+    3: 'Historical novel, mystery', 46: 'Horror', 30: 'Japanese novel', 21: 'Magic realism', 28: 'Manual', 76: 'Memoir',
+    77: 'Mystery', 62: 'Mystery thriller', 51: 'Mystery-thriller', 4: 'New-age spiritual novel', 44: 'Novel', 79: 'Novel, tragedy',
+    68: 'Novella', 17: 'Novella, Self-help', 55: 'Philosophical novel, Young adult', 74: 'Picaresque novel, Bildungsroman, satire, Robinsonade',
+    75: 'Popular science', 37: 'Popular science, Anthropology, Astrophysics, Cosmology, Philosophy, History', 60: 'Pregnancy guide', 2: 'Romance',
+    18: 'Romance novel', 71: 'Romantic family saga', 58: 'Romantic novel', 63: 'Satirical allegorical novella, Political satire, Dystopian Fiction, Roman à clef',
+    40: 'Science fiction', 10: 'Science fiction novel', 27: 'Self-help', 53: 'Self-help, motivational, business fable, psychology, leadership, parable',
+    50: 'Semi-autobiographical novel', 78: 'Sexology', 14: 'Social Science, Anthropology, Psychology', 69: 'Socialist realist novel',
+    70: 'Southern Gothic, Bildungsroman', 12: 'Thriller', 57: 'Travel literature', 7: 'Unfinished satirical dark comedy novel',
+    65: 'War novel', 16: 'War, thriller', 1: 'Young Adult Fiction', 73: 'Young Adult novel, adventure, dystopian, science fiction',
+    32: 'Young Adult novel, adventure, war, science fiction, action thriller', 22: 'Young adult fiction', 59: 'Young adult historical novel',
+    20: 'Young adult novel', 36: 'Young adult romantic novel'
+
+}
+
+
 st.write("""
 # Best Selling Books App
 
@@ -31,11 +58,7 @@ def user_input_features():
         1, 19, 68, 20, 71, 90, 92, 88, 38, 16, 54, 39, 82, 51, 65,  9, 62,
         3, 14, 43, 84, 53, 45, 44, 48, 94, 61, 73, 91, 89, 72, 25, 64, 79,
        18, 42, 37, 66, 30,  0, 58, 93, 35, 74])
-    Genre = st.sidebar.selectbox('Genre', [31, 47, 25, 41, 24, 26,  0, 19, 42, 15, 54, 61, 38, 45,  8, 39, 11,
-        9, 35, 72, 64,  5, 48,  6, 23, 67, 29, 52, 49, 43, 66, 34, 33, 56,
-       13,  3, 46, 30, 21, 28, 76, 77, 62, 51,  4, 44, 79, 68, 17, 55, 74,
-       75, 37, 60,  2, 18, 71, 58, 63, 40, 10, 27, 53, 50, 78, 14, 69, 70,
-       12, 57,  7, 65, 16,  1, 73, 32, 22, 59, 20, 36])
+    Genre = st.sidebar.selectbox('Genre', list.genre_mapping.key()))
     data = {'Authors': Authors,
             'Original_language': Original_language,
             'First_Published': First_Published,
