@@ -25,6 +25,7 @@ def user_input_features():
        140, 154, 123, 117,   2, 127,  97, 155, 112,  37, 118,  46, 105,
         54])
     Original_language = st.sidebar.selectbox('Original_language', [ 3,  4,  0,  7, 11, 13,  5,  8, 10, 12,  2, 14,  9,  1, 15,  6])
+     Original_language = ['Chinese', 'Czech', 'Dutch', 'English', 'French', 'German', 'Gujarati', 'Hindi', 'Italian', 'Japanese', 'Norwegian', 'Portuguese', 'Russian', 'Spanish', 'Swedish', 'Yiddish'])
     First_Published = st.sidebar.selectbox('First_Published', [ 4, 26, 75, 24,  2, 22, 32, 10, 70, 81, 76, 77, 78, 83, 85, 67, 33,
         7, 63, 47, 36, 28, 13,  6, 60, 55, 52, 56, 34, 12, 50, 49, 11, 40,
        59, 69, 17,  5,  8, 29, 57, 80, 46, 21, 15, 23, 31, 87, 86, 41, 27,
