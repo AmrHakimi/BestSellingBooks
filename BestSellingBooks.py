@@ -4,29 +4,7 @@ import pickle
 
 
 #mapping dictionary for datasets
-genre_mapping
-{
-    31: 'Adventure', 47: 'Autobiographical novel', 25: 'Autobiography', 41: 'Bildungsroman, Historical fiction', 24: 'Biographical novel',
-    26: "Children's Literature", 0: "Children's Literature, picture book", 19: "Children's fantasy novel", 42: "Children's fiction", 
-    15: "Children's literature", 54: "Children's literature, picture book, fiction", 61: "Children's novel", 38: "Children's picture book", 
-    45: 'Christian literature', 8: 'Classic regency novel, romance', 39: 'Coming-of-age', 11: 'Coming-of-age Murder mystery', 9: 'Crime novel', 
-    35: 'Crime thriller novel', 72: 'Detective', 64: 'Dystopian fiction', 5: 'Dystopian, political fiction, social science fiction', 
-    48: 'Erotica', 6: 'Essay/Literature', 23: 'Family saga', 67: 'Fantasy', 29: "Fantasy, Children's fiction", 
-    52: 'Feminist novel', 49: 'Fiction', 43: 'Gothic horror, Family saga', 66: 'Gothic novel', 34: 'Historical fiction', 33: 'Historical fiction, war novel',
-    56: 'Historical non-fiction, Autobiography, Memoir, Bildungsroman / Coming of Age, Jewish literature', 13: 'Historical novel',
-    3: 'Historical novel, mystery', 46: 'Horror', 30: 'Japanese novel', 21: 'Magic realism', 28: 'Manual', 76: 'Memoir',
-    77: 'Mystery', 62: 'Mystery thriller', 51: 'Mystery-thriller', 4: 'New-age spiritual novel', 44: 'Novel', 79: 'Novel, tragedy',
-    68: 'Novella', 17: 'Novella, Self-help', 55: 'Philosophical novel, Young adult', 74: 'Picaresque novel, Bildungsroman, satire, Robinsonade',
-    75: 'Popular science', 37: 'Popular science, Anthropology, Astrophysics, Cosmology, Philosophy, History', 60: 'Pregnancy guide', 2: 'Romance',
-    18: 'Romance novel', 71: 'Romantic family saga', 58: 'Romantic novel', 63: 'Satirical allegorical novella, Political satire, Dystopian Fiction, Roman à clef',
-    40: 'Science fiction', 10: 'Science fiction novel', 27: 'Self-help', 53: 'Self-help, motivational, business fable, psychology, leadership, parable',
-    50: 'Semi-autobiographical novel', 78: 'Sexology', 14: 'Social Science, Anthropology, Psychology', 69: 'Socialist realist novel',
-    70: 'Southern Gothic, Bildungsroman', 12: 'Thriller', 57: 'Travel literature', 7: 'Unfinished satirical dark comedy novel',
-    65: 'War novel', 16: 'War, thriller', 1: 'Young Adult Fiction', 73: 'Young Adult novel, adventure, dystopian, science fiction',
-    32: 'Young Adult novel, adventure, war, science fiction, action thriller', 22: 'Young adult fiction', 59: 'Young adult historical novel',
-    20: 'Young adult novel', 36: 'Young adult romantic novel'
 
-}
 
 
 st.write("""
@@ -52,13 +30,18 @@ def user_input_features():
        140, 154, 123, 117,   2, 127,  97, 155, 112,  37, 118,  46, 105,
         54])
     Original_language = st.sidebar.selectbox('Original Language', [ 3,  4,  0,  7, 11, 13,  5,  8, 10, 12,  2, 14,  9,  1, 15,  6])
-    First_Published = st.sidebar.selectbox('First Published', [ 4, 26, 75, 24,  2, 22, 32, 10, 70, 81, 76, 77, 78, 83, 85, 67, 33,
+    First_Published = st.sidebar.slider('First Published', [ 4, 26, 75, 24,  2, 22, 32, 10, 70, 81, 76, 77, 78, 83, 85, 67, 33,
         7, 63, 47, 36, 28, 13,  6, 60, 55, 52, 56, 34, 12, 50, 49, 11, 40,
        59, 69, 17,  5,  8, 29, 57, 80, 46, 21, 15, 23, 31, 87, 86, 41, 27,
         1, 19, 68, 20, 71, 90, 92, 88, 38, 16, 54, 39, 82, 51, 65,  9, 62,
         3, 14, 43, 84, 53, 45, 44, 48, 94, 61, 73, 91, 89, 72, 25, 64, 79,
        18, 42, 37, 66, 30,  0, 58, 93, 35, 74])
-    Genre = st.sidebar.selectbox('Genre', list.genre_mapping.keys())
+    Genre = st.sidebar.selectbox('Genre', [ 4, 26, 75, 24,  2, 22, 32, 10, 70, 81, 76, 77, 78, 83, 85, 67, 33,
+        7, 63, 47, 36, 28, 13,  6, 60, 55, 52, 56, 34, 12, 50, 49, 11, 40,
+       59, 69, 17,  5,  8, 29, 57, 80, 46, 21, 15, 23, 31, 87, 86, 41, 27,
+        1, 19, 68, 20, 71, 90, 92, 88, 38, 16, 54, 39, 82, 51, 65,  9, 62,
+        3, 14, 43, 84, 53, 45, 44, 48, 94, 61, 73, 91, 89, 72, 25, 64, 79,
+       18, 42, 37, 66, 30,  0, 58, 93, 35, 74]) 
     data = {'Authors': Authors,
             'Original_language': Original_language,
             'First_Published': First_Published,
