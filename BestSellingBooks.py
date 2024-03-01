@@ -58,7 +58,7 @@ def user_input_features():
         1, 19, 68, 20, 71, 90, 92, 88, 38, 16, 54, 39, 82, 51, 65,  9, 62,
         3, 14, 43, 84, 53, 45, 44, 48, 94, 61, 73, 91, 89, 72, 25, 64, 79,
        18, 42, 37, 66, 30,  0, 58, 93, 35, 74])
-    Genre = st.sidebar.selectbox('Genre', list.genre_mapping.key()))
+    Genre = st.sidebar.selectbox('Genre', list.genre_mapping.keys())
     data = {'Authors': Authors,
             'Original_language': Original_language,
             'First_Published': First_Published,
